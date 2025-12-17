@@ -6,11 +6,8 @@ public class Student {
     private String name;
     private String email;
 
-    // No-arg constructor
-    public Student() {
-    }
+    public Student() { }
 
-    // Parameterized constructor
     public Student(int id, String name, String email) {
         this.id = id;
         this.name = name;
@@ -41,3 +38,4 @@ public class Student {
         this.email = email;
     }
 }
+    

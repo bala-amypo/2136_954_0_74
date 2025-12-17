@@ -2,23 +2,22 @@ package com.example.demo.controller;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.entity.Student;
-import com.example.demo.services.StudentService; // correct import
+import com.example.demo.services.StudentService;
 
 @RestController
 @RequestMapping("/students")
 public class StudentController {
 
     @Autowired
-    private StudentService service; // inject interface, not impl
+    private StudentService service;
 
     @PostMapping
     public Student addStudent(@RequestBody Student student) {
-        return service.insertStudent(student); // method name matches interface
+        return service.insertStudent(student);
     }
 
     @GetMapping
@@ -33,8 +32,8 @@ public class StudentController {
 
     @PutMapping("/{id}")
     public String updateStudent(@PathVariable int id, @RequestBody Student newStudent) {
-        Optional<Student> existingStudent = service.getOneStudent(id);
-        if (existingStudent.isPresent()) {
+        Optional<Student> existing = service.getOneStudent(id);
+        if (existing.isPresent()) {
             newStudent.setId(id);
             service.insertStudent(newStudent);
             return "Updated successfully";
@@ -44,8 +43,8 @@ public class StudentController {
 
     @DeleteMapping("/{id}")
     public String deleteStudent(@PathVariable int id) {
-        Optional<Student> existingStudent = service.getOneStudent(id);
-        if (existingStudent.isPresent()) {
+        Optional<Student> existing = service.getOneStudent(id);
+        if (existing.isPresent()) {
             service.deleteStudent(id);
             return "Deleted successfully";
         }

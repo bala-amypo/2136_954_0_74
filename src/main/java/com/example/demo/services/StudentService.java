@@ -3,7 +3,7 @@ package com.example.demo.services;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.demo.entity.Studentity;
+import com.example.demo.entity.Student;
 
 public interface StudentService {
     
