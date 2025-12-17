@@ -1,22 +1,22 @@
 package com.example.demo.entity;
+
 public class Student {
 
     private int id;
     private String name;
     private String email;
 
-    
-    public Studentity() {
+    // No-arg constructor
+    public Student() {
     }
 
-    
-    public Studentity(int id, String name, String email) {
+    // Parameterized constructor
+    public Student(int id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
     }
 
-    
     public int getId() {
         return id;
     }

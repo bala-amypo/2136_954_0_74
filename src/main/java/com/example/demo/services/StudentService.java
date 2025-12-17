@@ -1,13 +1,16 @@
-package com.example.demo.service;
+package com.example.demo.services;
+
 import java.util.*;
+
 import org.springframework.stereotype.Service;
+
 import com.example.demo.entity.Student;
 
 @Service
-public class Studentserviceimpl implements StudentService {
+public class StudentServiceImpl implements StudentService {
 
-    private final Map<Long, Student> store = new HashMap<>();
-    private long counter = 1;
+    private final Map<Integer, Student> store = new HashMap<>();
+    private int counter = 1;
 
     @Override
     public Student insertStudent(Student st) {
@@ -22,12 +25,12 @@ public class Studentserviceimpl implements StudentService {
     }
 
     @Override
-    public Optional<Student> getOneStudent(Long id) {
+    public Optional<Student> getOneStudent(int id) {
         return Optional.ofNullable(store.get(id));
     }
 
     @Override
-    public void deleteStudent(Long id) {
+    public void deleteStudent(int id) {
         store.remove(id);
     }
 }
