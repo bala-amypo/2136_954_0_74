@@ -9,7 +9,7 @@ import com.example.demo.entity.Student;
 public class StudentServiceImpl implements StudentService {
 
     private final Map<Integer, Student> store = new HashMap<>();
-    private long counter = 1;
+    private int counter = 1;
 
     @Override
     public Student insertStudent(Student st) {
@@ -24,12 +24,12 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Optional<Student> getOneStudent(Long id) {
+    public Optional<Student> getOneStudent(int id) {
         return Optional.ofNullable(store.get(id));
     }
 
     @Override
-    public void deleteStudent(Long id) {
+    public void deleteStudent(int id) {
         store.remove(id);
     }
 }
