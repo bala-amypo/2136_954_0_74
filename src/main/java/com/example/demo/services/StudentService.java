@@ -5,10 +5,10 @@ import java.util.Optional;
 
 import com.example.demo.entity.Studentity;
 
-public interface Studentservice {
+public interface StudentService {
     
-    Studentity insertStudent(Studentity st);
-    List<Studentity> getAllStudents();
-    Optional<Studentity> getOneStudent(int id);
+    Student insertStudent(Student st);
+    List<Student> getAllStudents();
+    Optional<Student> getOneStudent(int id);
     void deleteStudent(int id);
 }
