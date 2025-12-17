@@ -10,5 +10,5 @@ public interface StudentService {
     Student insertStudent(Student st);
     List<Student> getAllStudents();
     Optional<Student> getOneStudent(Integer id);
-    void deleteStudent(int id);
+    void deleteStudent(Integer id);
 }
